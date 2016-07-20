@@ -1,0 +1,10 @@
+{
+    "{reponame}": {
+        "filePath": ""
+    },
+    "slackbot": {
+      "api_token": ""
+    }
+    "domain": "",
+    "port": ,
+}

@@ -1,0 +1,18 @@
+{
+  "name": "captainhook",
+  "version": "1.0.0",
+  "description": "Node App That Responds To WebHooks",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "git-exec": "^0.2.1",
+    "hapi": "^13.5.0",
+    "nconf": "^0.8.4",
+    "nodegit": "^0.14.1",
+    "slackbots": "^0.5.1"
+  }
+}
