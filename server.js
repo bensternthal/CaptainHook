@@ -52,8 +52,12 @@ function pullRepo(request) {
 
   // update repository.. think about somehow sanitizing input
   repo.exec('pull', null, function(err, stdout) {
-    //This should be less hardcoded.
-    bot.postMessageToChannel('general', 'Devpatch Updated With Latest Code');
+
+    if (err) {
+      console.log('Error: ' + err + '/n Stdout: ' + stdout);
+    } else {
+      bot.postMessageToChannel('general', 'Devpatch Updated With Latest Code');
+    }
   });
 }
 
