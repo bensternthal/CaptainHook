@@ -8,11 +8,14 @@ var path = require('path');
 
 // Create a server with a host and port
 var server = new Hapi.Server();
+
+// Create & Configure Slackbot
 var bot = new SlackBot({
   token: Conf.get('slackbot:api_token'),
   name: 'captainhook'
 });
 var channel = Conf.get('slackbot:channel');
+var params = {icon_emoji: ':heart_eyes_cat:'};
 
 server.connection({
   host: Conf.get('domain'),
@@ -55,7 +58,7 @@ function pullRepo(request) {
     if (err) {
       console.log('Error: ' + err + '/n Stdout: ' + stdout);
     } else {
-      bot.postMessageToChannel(channel, 'Devpatch Updated With Latest Code');
+      bot.postMessageToChannel(channel, 'Devpatch Updated With Latest Code', params);
     }
   });
 }
