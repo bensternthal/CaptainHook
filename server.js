@@ -34,6 +34,16 @@ server.route({
   }
 });
 
+// Add the route to receive a webhook request
+server.route({
+  method: 'GET',
+  path: '/',
+  handler: function(request, reply) {
+    console.log('here');
+    reply('I am here');
+  }
+});
+
 // Function to do pull
 function pullRepo(request) {
   var payload = JSON.parse(request.payload);
@@ -42,8 +52,8 @@ function pullRepo(request) {
 
   // update repository.. think about somehow sanitizing input
   repo.exec('pull', null, function(err, stdout) {
-    //console.log('updated');
-    bot.postMessageToChannel('general', 'testing slackbot');
+    //This should be less hardcoded.
+    bot.postMessageToChannel('general', 'Devpatch Updated With Latest Code');
   });
 }
 
