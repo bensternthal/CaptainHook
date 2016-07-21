@@ -15,7 +15,7 @@ var bot = new SlackBot({
 
 
 server.connection({
-  host: Conf.get('domain'),
+  //host: Conf.get('domain'),
   port: Conf.get('port')
 });
 
