@@ -12,7 +12,7 @@ var bot = new SlackBot({
   token: Conf.get('slackbot:api_token'),
   name: 'captainhook'
 });
-var channel = new Git(Conf.get('slackbot:channel'));
+var channel = Conf.get('slackbot:channel');
 
 server.connection({
   host: Conf.get('domain'),
