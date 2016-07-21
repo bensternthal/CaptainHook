@@ -12,10 +12,10 @@ var bot = new SlackBot({
   token: Conf.get('slackbot:api_token'),
   name: 'captainhook'
 });
-
+var channel = new Git(Conf.get('slackbot:channel'));
 
 server.connection({
-  //host: Conf.get('domain'),
+  host: Conf.get('domain'),
   port: Conf.get('port')
 });
 
@@ -52,11 +52,10 @@ function pullRepo(request) {
 
   // update repository.. think about somehow sanitizing input
   repo.exec('pull', null, function(err, stdout) {
-
     if (err) {
       console.log('Error: ' + err + '/n Stdout: ' + stdout);
     } else {
-      bot.postMessageToChannel('general', 'Devpatch Updated With Latest Code');
+      bot.postMessageToChannel(channel, 'Devpatch Updated With Latest Code');
     }
   });
 }

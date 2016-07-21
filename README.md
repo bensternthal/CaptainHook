@@ -4,4 +4,6 @@ Dead simple node app for automating a git pull based on a webhook. Handy for dev
 Not secure, not to be used on production, not well tested.
 
 1. Copy local.json.dist to local.json & populate
-2. run via ```docker-compose up -d```
+2. run via your fav node manager
+
+I would love to dockerize this but I do not think its possible :)

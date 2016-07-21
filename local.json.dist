@@ -3,7 +3,8 @@
         "filePath": ""
     },
     "slackbot": {
-      "api_token": ""
+      "api_token": "",
+      "channel": ""
     }
     "domain": "",
     "port": ,
