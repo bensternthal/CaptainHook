@@ -37,7 +37,7 @@ server.route({
   }
 });
 
-// Add the route to receive a webhook request
+// Test Route.. are you alive!
 server.route({
   method: 'GET',
   path: '/',
