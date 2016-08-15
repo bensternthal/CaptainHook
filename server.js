@@ -58,6 +58,7 @@ function pullRepo(request) {
     if (err) {
       console.log('Error: ' + err + '/n Stdout: ' + stdout);
     } else {
+      console.log('Repo updated.');
       bot.postMessageToChannel(channel, 'Devpatch Updated With Latest Code', params);
     }
   });
